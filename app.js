@@ -21,7 +21,7 @@ var indexRoutes = require("./routes/index");
 
 // seedDB();
 mongoose.connect("process.env.DATABSEURL", { useNewUrlParser: true, useUnifiedTopology: true });
-// mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect("mongodb+srv://mgarkel:Mumbai32@yelpcamp-nawrf.mongodb.net/yelpcamp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -52,6 +52,6 @@ app.use(indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-app.listen(port, function () {  
+app.listen(process.env.PORT, function () {  
     console.log("Server Has Started!");
 });
