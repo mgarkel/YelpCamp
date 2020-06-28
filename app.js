@@ -21,7 +21,6 @@ var indexRoutes = require("./routes/index");
 
 // seedDB();
 mongoose.connect("process.env.DATABSEURL", { useNewUrlParser: true, useUnifiedTopology: true });
-// mongoose.connect("mongodb+srv://mgarkel:Mumbai32@yelpcamp-nawrf.mongodb.net/yelpcamp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
