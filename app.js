@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-const port = process.env.PORT;
+var port = process.env.PORT || 3000;
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var campGround = require("./models/campgrounds");
@@ -21,6 +21,7 @@ var indexRoutes = require("./routes/index");
 
 // seedDB();
 mongoose.connect("process.env.DATABSEURL", { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -51,7 +52,6 @@ app.use(indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-// Listen on Port 3000
-app.listen(port, process.env.IP, function(){
-    console.log("Application Started");
+app.listen(port, function () {  
+    console.log("Server Has Started!");
 });
