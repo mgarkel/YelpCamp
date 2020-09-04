@@ -13,3 +13,11 @@
 .delete-form {
     display: inline;
 }
+
+#index_thumbnails{
+    height: 100%;
+}
+
+#index_thumbnails_imgs{
+    height: 55%;
+}

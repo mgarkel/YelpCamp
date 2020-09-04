@@ -11,8 +11,8 @@
     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
         <% campGrounds.forEach(function(camp){ %>
             <div class="col-md-3 col-sm-6">
-                <div class = "thumbnail">
-                    <img src=" <%= camp.image %>">
+                <div class = "thumbnail" id="index_thumbnails">
+                    <img src=" <%= camp.image %>" id="index_thumbnails_imgs">
                     <div class="caption">
                         <h4><%= camp.name %></h4>
                     </div>
